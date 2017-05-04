@@ -7,24 +7,21 @@ class Home extends Component {
     super(props);
 
     this.state = {
-      theLocation: '',
+      currentWeather: '',
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit (location) {
+  handleSubmit (weather) {
     this.setState(()=>{
-      console.log(location)
       return {
-        theLocation: location
+        currentWeather: weather
       }
     })
-
   }
 
   render() {
-    console.log(2, this.state.theLocation)
     return(
       <div className="container">
         <Header handleSubmit={this.handleSubmit} />

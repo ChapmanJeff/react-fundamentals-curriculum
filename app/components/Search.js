@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
+import {getCurrentWeather, get5Day} from '../utils/api'
 
 class Search extends Component {
   constructor (props) {
@@ -24,12 +25,14 @@ class Search extends Component {
 
   onSubmit () {
     event.preventDefault();
-
-    this.props.handleSubmit(this.state.selectedLocation)
+    getCurrentWeather(this.state.selectedLocation)
+      .then((weather)=>{
+        this.props.handleSubmit(weather);
+      })
+    /*this.props.handleSubmit(this.state.selectedLocation)*/
   }
 
   render(){
-    console.log(1, this.state.selectedLocation)
     return(
       <div className='search-menu'>
         <input
