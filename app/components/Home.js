@@ -7,37 +7,30 @@ class Home extends Component {
     super(props);
 
     this.state = {
-      selectedLocation: '',
+      theLocation: '',
     }
 
-    this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange (event) {
-    console.log(event.target.value)
+  handleSubmit (location) {
     this.setState(()=>{
+      console.log(location)
       return {
-        selectedLocation: value
+        theLocation: location
       }
     })
-  }
-  
-
-  handleSubmit () {
 
   }
 
   render() {
-    console.log(this.state.selectedLocation)
+    console.log(2, this.state.theLocation)
     return(
       <div className="container">
-        <Header />
+        <Header handleSubmit={this.handleSubmit} />
         <div className='homeContainer' style={{backgroundImage:"url('app/images/pattern.svg')"}}>
           <h1>Enter a City and State</h1>
           <Search
-            handleChange={this.handleChange}
-            val={this.state.selectedLocation}
             handleSubmit={this.handleSubmit}
           />
         </div>

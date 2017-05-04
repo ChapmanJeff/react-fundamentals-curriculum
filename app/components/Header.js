@@ -8,7 +8,7 @@ class Header extends Component {
         <div>
           <h1>Weather App</h1>
         </div>
-        <Search />
+        <Search handleSubmit={this.props.handleSubmit}/>
       </div>
     )
   }
