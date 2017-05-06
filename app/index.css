@@ -59,6 +59,8 @@ body {
 }
 
 .submit {
+  text-decoration: none;
+  text-align: center;
   margin: 10px;
   background: #5CB85C;
   border-radius: 4px;
@@ -67,4 +69,50 @@ body {
   border: 1px solid #4cae4c;
   padding: 6px 12px;
   font-size: 14px;
+}
+
+.locationHeader {
+  font-size: 65px;
+  font-weight: 100;
+  text-align: center;
+}
+
+li {
+  list-style: none;
+}
+
+.dayContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.dayTile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 35px;
+  align-items: center;
+  text-align: center;
+  color: black;
+}
+
+.dayTile:hover {
+  cursor: pointer;
+}
+
+.dayTile p {
+  font-weight: 100;
+  font-size: 34px;
+}
+
+.dayTile img {
+  height: 130px;
+}
+
+.dayTile h3 {
+  font-weight: 100;
+  font-size: 30px;
 }

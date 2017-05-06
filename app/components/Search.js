@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import {getCurrentWeather, get5Day} from '../utils/api'
+import {Link} from 'react-router-dom'
 
 class Search extends Component {
   constructor (props) {
@@ -41,11 +42,13 @@ class Search extends Component {
           type="text" placeholder="St.George, Utah"
           onChange={this.handleChange}
         />
-        <button
-          onClick={this.onSubmit}
+        <Link to={{
+          pathname: '/forecast',
+          search: `?city=${this.state.selectedLocation}`
+        }}
           className='submit'>
             Get Weather
-        </button>
+        </Link>
       </div>
     )
   }

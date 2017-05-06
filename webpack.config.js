@@ -4,8 +4,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const config = {
   entry: './app/index.js',
   output: {
+   path: path.resolve(__dirname, 'dist'),
    filename: 'bundle.js',
-   path: path.resolve(__dirname, 'dist')
+   publicPath: '/'
  },
  module: {
    rules: [
@@ -13,6 +14,9 @@ const config = {
      // above will look in package.json for babel property
      {test: /\.css$/, use: ['style-loader', 'css-loader']}
    ]
+ },
+ devServer: {
+   historyApiFallback: true
  },
  plugins: [
    new HtmlWebpackPlugin({
